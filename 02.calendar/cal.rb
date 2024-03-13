@@ -39,12 +39,12 @@ print monthfirst_blank
 def DateCalendar(first, last)
   today = Date.today
   (first..last).each do |x|
-    puts if x.wday == 0
     if x == today
       print "\e[30m\e[47m" + x.day.to_s + "\e[0m" + " "
     else
       print x.strftime('%e') + " "
     end
+    puts if x.wday == 6
   end
 end
 
