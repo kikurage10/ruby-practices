@@ -25,13 +25,8 @@ monthlast = Date.new(year, month, -1)
 monthyear = month.to_s + "月 " + year.to_s
 weeks = "日 月 火 水 木 金 土"
 
-if monthfirst.wday == 0
-  puts monthyear.center(20)
-  print weeks
-else
-  puts monthyear.center(20)
-  puts weeks
-end
+puts monthyear.center(20)
+puts weeks
 
 monthfirst_blank = "   " * monthfirst.wday
 print monthfirst_blank
