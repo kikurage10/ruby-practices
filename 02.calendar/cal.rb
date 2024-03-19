@@ -27,7 +27,7 @@ def date_calendar(first, last)
   today = Date.today
   (first..last).each do |x|
     if x == today
-      print "\e[30m\e[47m" + x.day.to_s.rjust(2) + "\e[0m" + " "
+      print "\e[7m" + x.day.to_s.rjust(2) + "\e[0m" + " "
     else
       print x.strftime('%e').rjust(2) + " "
     end
