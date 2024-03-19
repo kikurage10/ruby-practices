@@ -23,7 +23,7 @@ puts weeks
 monthfirst_blank = "   " * first_day.wday
 print monthfirst_blank
 
-def DateCalendar(first, last)
+def date_calendar(first, last)
   today = Date.today
   (first..last).each do |x|
     if x == today
@@ -35,4 +35,4 @@ def DateCalendar(first, last)
   end
 end
 
-DateCalendar(first_day, last_day)
+date_calendar(first_day, last_day)
