@@ -29,7 +29,7 @@ def date_calendar(first, last)
     if x == today
       print "\e[30m\e[47m" + x.day.to_s + "\e[0m" + " "
     else
-      print x.strftime('%e') + " "
+      print x.strftime('%e').rjust(2) + " "
     end
     puts if x.saturday?
   end
