@@ -31,7 +31,7 @@ def date_calendar(first, last)
     else
       print x.strftime('%e') + " "
     end
-    puts if x.wday == 6
+    puts if x.saturday?
   end
 end
 
