@@ -8,16 +8,8 @@ opt.on('-m month', Integer) {|month| params[:month] = month}
 opt.on('-y year', Integer) {|year| params[:year] = year}
 opt.parse!(ARGV)
 
-if params[:month]
-  month = params[:month]
-else
-  month = Date.today.month
-end
-if params[:year]
-  year = params[:year]
-else
-  year = Date.today.year
-end
+month = params[:month] || Date.today.month
+year = params[:year] || Date.today.year
 
 monthfirst = Date.new(year, month, 1)
 monthlast = Date.new(year, month, -1)
