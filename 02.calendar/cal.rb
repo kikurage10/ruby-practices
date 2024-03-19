@@ -11,8 +11,8 @@ opt.parse!(ARGV)
 month = params[:month] || Date.today.month
 year = params[:year] || Date.today.year
 
-monthfirst = Date.new(year, month, 1)
-monthlast = Date.new(year, month, -1)
+first_day = Date.new(year, month, 1)
+last_day = Date.new(year, month, -1)
 
 monthyear = month.to_s + "月 " + year.to_s
 weeks = "日 月 火 水 木 金 土"
@@ -20,7 +20,7 @@ weeks = "日 月 火 水 木 金 土"
 puts monthyear.center(20)
 puts weeks
 
-monthfirst_blank = "   " * monthfirst.wday
+monthfirst_blank = "   " * first_day.wday
 print monthfirst_blank
 
 def DateCalendar(first, last)
@@ -35,4 +35,4 @@ def DateCalendar(first, last)
   end
 end
 
-DateCalendar(monthfirst, monthlast)
+DateCalendar(first_day, last_day)
