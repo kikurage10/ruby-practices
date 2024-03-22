@@ -28,7 +28,7 @@ def date_calendar(month_start, month_end)
   (month_start..month_end).each do |date|
     day_string = "#{date.day.to_s.rjust(2)} "
     day_string = print "\e[7m#{date.day.to_s.rjust(2)}\e[0m " if date == today
-    print "#{day_string}"
+    print day_string
     puts "\n" if date.saturday? 
   end
 end
