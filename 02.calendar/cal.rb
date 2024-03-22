@@ -23,9 +23,9 @@ puts weeks
 monthfirst_blank = "   " * first_day.wday
 print monthfirst_blank
 
-def date_calendar(first, last)
+def date_calendar(month_start, month_end)
   today = Date.today
-  (first..last).each do |x|
+  (month_start..month_end).each do |x|
     if x == today
       print "\e[7m" + x.day.to_s.rjust(2) + "\e[0m" + " "
     else
