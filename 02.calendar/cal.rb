@@ -25,13 +25,13 @@ print monthfirst_blank
 
 def date_calendar(month_start, month_end)
   today = Date.today
-  (month_start..month_end).each do |x|
-    if x == today
-      print "\e[7m" + x.day.to_s.rjust(2) + "\e[0m" + " "
+  (month_start..month_end).each do |date|
+    if date == today
+      print "\e[7m" + date.day.to_s.rjust(2) + "\e[0m" + " "
     else
-      print x.strftime('%e').rjust(2) + " "
+      print date.strftime('%e').rjust(2) + " "
     end
-    puts if x.saturday?
+    puts if date.saturday?
   end
 end
 
