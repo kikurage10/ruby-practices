@@ -17,8 +17,7 @@ last_day = Date.new(year, month, -1)
 puts "#{month.to_s}月 #{year.to_s}".center(20)
 puts "日 月 火 水 木 金 土"
 
-monthfirst_blank = "   " * first_day.wday
-print monthfirst_blank
+print "   " * first_day.wday
 
 def date_calendar(month_start, month_end)
   today = Date.today
