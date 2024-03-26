@@ -14,11 +14,8 @@ year = params[:year] || Date.today.year
 first_day = Date.new(year, month, 1)
 last_day = Date.new(year, month, -1)
 
-monthyear = "#{month.to_s}月 #{year.to_s}"
-weeks = "日 月 火 水 木 金 土"
-
-puts monthyear.center(20)
-puts weeks
+puts "#{month.to_s}月 #{year.to_s}".center(20)
+puts "日 月 火 水 木 金 土"
 
 monthfirst_blank = "   " * first_day.wday
 print monthfirst_blank
