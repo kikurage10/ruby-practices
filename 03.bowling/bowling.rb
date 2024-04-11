@@ -28,7 +28,7 @@ frames.each_with_index do |frame, idx|
       if strike && (first_next_frame[0] == 10 || first_next_frame[1] == 10)
         10 + 10 + second_next_frame[0]
       elsif strike
-        10 + first_next_frame[0] + first_next_frame[1]
+        10 + first_next_frame.take(2).sum
       elsif spare
         10 + first_next_frame[0]
       else
