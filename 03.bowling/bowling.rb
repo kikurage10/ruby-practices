@@ -21,7 +21,7 @@ frames.each_with_index do |frame, idx|
   first_next_frame = frames[idx + 1]
   second_next_frame = frames[idx + 2]
   strike = frame[0] == 10
-  spare = frame.sum == 10
+  spare = !strike && frame.sum == 10
 
   point +=
     if idx < 9
