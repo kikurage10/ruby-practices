@@ -34,10 +34,12 @@ frames.each_with_index do |frame, idx|
       else
         frame.sum
       end
-    elsif strike || spare
-      10 + frame[2].to_i
     else
-      frame.sum
+      if strike || spare
+        10 + frame[2].to_i
+      else
+        frame.sum
+      end
     end
 end
 
