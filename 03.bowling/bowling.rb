@@ -17,30 +17,29 @@ end
 frames = shots.each_slice(2).to_a
 
 point = 0
-frames.each_with_index do |frame, idx|
+point = frames.each_with_index.sum do |frame, idx|
   first_next_frame = frames[idx + 1]
   second_next_frame = frames[idx + 2]
   strike = frame[0] == 10
   spare = !strike && frame.sum == 10
 
-  point +=
-    if idx < 9
-      if strike && (first_next_frame[0] == 10 || first_next_frame[1] == 10)
-        10 + 10 + second_next_frame[0]
-      elsif strike
-        10 + first_next_frame.take(2).sum
-      elsif spare
-        10 + first_next_frame[0]
-      else
-        frame.sum
-      end
+  if idx < 9
+    if strike && (first_next_frame[0] == 10 || first_next_frame[1] == 10)
+      10 + 10 + second_next_frame[0]
+    elsif strike
+      10 + first_next_frame.take(2).sum
+    elsif spare
+      10 + first_next_frame[0]
     else
-      if strike || spare
-        10 + frame[2].to_i
-      else
-        frame.sum
-      end
+      frame.sum
     end
+  else
+    if strike || spare
+      10 + frame[2].to_i
+    else
+      frame.sum
+    end
+  end
 end
 
 puts point
