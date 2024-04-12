@@ -34,11 +34,7 @@ point = frames.each_with_index.sum do |frame, idx|
       frame.sum
     end
   else
-    if strike || spare
-      10 + frame[2].to_i
-    else
-      frame.sum
-    end
+    strike || spare ? 10 + frame[2].to_i : frame.sum
   end
 end
 
