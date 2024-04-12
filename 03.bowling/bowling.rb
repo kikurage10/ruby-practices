@@ -16,7 +16,6 @@ end
 
 frames = shots.each_slice(2).to_a
 
-point = 0
 point = frames.each_with_index.sum do |frame, idx|
   first_next_frame = frames[idx + 1]
   second_next_frame = frames[idx + 2]
